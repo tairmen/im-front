@@ -1,0 +1,53 @@
+<template>
+  <v-app-bar fixed app elevation="0">
+    <img src="/logo_full.svg" />
+    <v-spacer></v-spacer>
+    <div class="menu-item" v-for="(item, i) in items" :key="i">
+      {{ $t(item.text) }}
+    </div>
+    <v-spacer></v-spacer>
+    <LangSelect />
+    <v-btn class="white-paper-btn" color="primary" elevation="0">{{ $t("white_paper") }}</v-btn>
+  </v-app-bar>
+</template>
+<script>
+import LangSelect from "~/components/settings/LangSelect";
+import { mapGetters } from "vuex";
+export default {
+  name: "NavBar",
+  components: {
+    LangSelect,
+  },
+  data() {
+    return {};
+  },
+  computed: {
+    ...mapGetters("menu", {
+      items: "getAllMenu",
+    }),
+  },
+};
+</script>
+<style>
+.v-app-bar {
+  background: transparent !important;
+  padding: 0px 150px;
+}
+.menu-item {
+  color: #1a2e53;
+  cursor: pointer;
+  font-family: "Assistant";
+  font-weight: 300;
+  margin: 0px 20px;
+  font-size: 18px;
+}
+.menu-item:hover {
+  color: #000000;
+}
+.white-paper-btn {
+  border-radius: 10px;
+  margin-left: 20px;
+  color: #ffffff !important;
+  text-transform: none;
+}
+</style>

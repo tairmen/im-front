@@ -1,0 +1,23 @@
+export default {
+    "main_page": "Main page",
+    "about_us": "About us",
+    "services": "Services",
+    "contact_us": "Contact us",
+    "white_paper": "White paper",
+    "reserved_text": "by Immi-Coin. All Rights Reserved.",
+    "login": "Log In",
+    "email": "Email",
+    "phone": "Phone",
+    "password": "Password",
+    "create_password": "Create password",
+    "confirm_password": "Confirm password",
+    "forgot_password": "Forgot password?",
+    "remember_me": "Remember me",
+    "dont_have_account": "Don’t have an account?",
+    "sign_up": "Sign up",
+    "privacy_policy": "Privacy policy",
+    "terms_and_cond": "Terms of use",
+    "aggree_with": "I agree with",
+    "terms&condition": "Terms&Condition",
+    "already_have_account": "Already have an account?"
+}

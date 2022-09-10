@@ -1,0 +1,23 @@
+export default {
+    "main_page": "Головна",
+    "about_us": "Про нас",
+    "services": "Сервіси",
+    "contact_us": "Контакти",
+    "white_paper": "Вайт пейпер",
+    "reserved_text": "від Immi-Coin. Всі права захищені.",
+    "login": "Логін",
+    "email": "Email",
+    "phone": "Телефон",
+    "password": "Пароль",
+    "create_password": "Створіть пароль",
+    "confirm_password": "Підтвердіть пароль",
+    "forgot_password": "Забули пароль?",
+    "remember_me": "Запам'ятати мене",
+    "dont_have_account": "У вас нема акаунта?",
+    "sign_up": "Регістрація",
+    "privacy_policy": "Політика конфіденціальності",
+    "terms_and_cond": "Умови експлуатації",
+    "aggree_with": "Я згоден з",
+    "terms&condition": "Умови&Положення",
+    "already_have_account": "Вже є акаунт?"
+}
