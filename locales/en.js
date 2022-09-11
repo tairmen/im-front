@@ -19,5 +19,15 @@ export default {
     "terms_and_cond": "Terms of use",
     "aggree_with": "I agree with",
     "terms&condition": "Terms&Condition",
-    "already_have_account": "Already have an account?"
+    "already_have_account": "Already have an account?",
+    "welcome": "Welcome",
+    "log_out": "Logout",
+    "your_balance": "Your balance",
+    "immicoin_value": "Immicoin value",
+    "download_white_paper": "Download our white paper",
+    "buy_tokens": "Buy tokens",
+    "deposit_amount": "Deposit amount",
+    "immi_amount": "Immicoins amount",
+    "buy": "Buy",
+    "token_timeline": "Token timeline"
 }

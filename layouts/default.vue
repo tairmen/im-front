@@ -1,28 +1,35 @@
 <template>
   <v-app dark>
-    <NavBar />
-    <v-main class="main-login-background">
-      <v-container>
-        <Nuxt />
-      </v-container>
+    <MainNavBar v-if="main_bav_bar" />
+    <NavBar v-else />
+    <v-main :class="!main_bav_bar ? 'login-background' : 'main-background'">
+      <Nuxt />
     </v-main>
-    <Footer />
+    <Footer v-if="!main_bav_bar" />
   </v-app>
 </template>
 
 <script>
 import NavBar from "~/components/NavBar";
+import MainNavBar from "~/components/MainNavBar";
 import Footer from "~/components/Footer";
 export default {
   name: "DefaultLayout",
   components: {
     NavBar,
     Footer,
+    MainNavBar,
   },
   data() {
-    return {
-      
-    };
+    return {};
+  },
+  computed: {
+    main_bav_bar() {
+      return this.$route.name == "main";
+    },
+  },
+  created() {
+    console.log("this.$route", this.$route);
   },
 };
 </script>
@@ -31,10 +38,16 @@ html {
   overflow-y: hidden;
   font-family: Ubuntu;
 }
-.main-login-background {
-  background: url('/main_bg.png');
+.login-background {
+  background: url("/main_bg.png");
   background-size: cover;
-  padding-left: 150px !important;
-  padding-right: 150px !important;
+  padding-left: 160px !important;
+  padding-right: 160px !important;
+}
+.main-background {
+  background: #ebebeb;
+  background-size: cover;
+  padding-left: 160px !important;
+  padding-right: 160px !important;
 }
 </style>

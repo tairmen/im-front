@@ -44,7 +44,7 @@
           }}</nuxt-link>
         </div>
         <div class="pt-5 text-center">
-          <v-btn block color="primary" elevation="0">{{ $t("login") }}</v-btn>
+          <v-btn block color="primary" elevation="0" @click="$router.push('main')">{{ $t("login") }}</v-btn>
           <div class="bottom-txt">{{$t('dont_have_account')}}</div>
           <nuxt-link class="sign-up-link" :to="'/signup'">{{
             $t("sign_up")

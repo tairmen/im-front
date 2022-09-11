@@ -46,7 +46,7 @@ export default {
 .main-footer {
   background: #05042a !important;
   height: 120px;
-  padding: 10px 150px;
+  padding: 10px 160px;
   color: white !important;
   font-size: 14px;
   font-weight: 300;

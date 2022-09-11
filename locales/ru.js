@@ -19,5 +19,15 @@ export default {
     "terms_and_cond": "Условия эксплуатации",
     "aggree_with": "Я согласен с",
     "terms&condition": "Условия&положения",
-    "already_have_account": "Уже есть аккаунт?"
+    "already_have_account": "Уже есть аккаунт?",
+    "welcome": "Добро пожаловать",
+    "log_out": "Выйти",
+    "your_balance": "Ваш баланс",
+    "immicoin_value": "Цена immicoin",
+    "download_white_paper": "Скачать наши вайт пейпер",
+    "buy_tokens": "Купить токены",
+    "deposit_amount": "Депозит",
+    "immi_amount": "Количество immicoins",
+    "buy": "Купить",
+    "token_timeline": "История токена"
 }
