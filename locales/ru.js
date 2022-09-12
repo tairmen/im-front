@@ -29,5 +29,12 @@ export default {
     "deposit_amount": "Депозит",
     "immi_amount": "Количество immicoins",
     "buy": "Купить",
-    "token_timeline": "История токена"
+    "token_timeline": "История токена",
+    "reset_password": "Обновить пароль",
+    "enter_you_email_text": "Введите ваш email и мы пришлем вам код",
+    "create_new_password": "Создать новый пароль",
+    "enter_you_password_text": "Пожалуйста, введите свой новый пароль ниже",
+    "email_verification": "Верификация email",
+    "email_verification_text": "Пожалуйста, введите 6-символьный верификационный код. Код валидный 30 минут.",
+    "verification_code": "Верификационный код"
 }

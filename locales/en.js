@@ -29,5 +29,12 @@ export default {
     "deposit_amount": "Deposit amount",
     "immi_amount": "Immicoins amount",
     "buy": "Buy",
-    "token_timeline": "Token timeline"
+    "token_timeline": "Token timeline",
+    "reset_password": "Reset password",
+    "enter_you_email_text": "Enter your email and we send you a code",
+    "create_new_password": "Create new password",
+    "enter_you_password_text": "Please put your new password here",
+    "email_verification": "Email verification",
+    "email_verification_text": "Please enter the 6-digit verification code. The code is valid for 30 minutes.",
+    "verification_code": "Verification code"
 }

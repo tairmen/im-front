@@ -58,7 +58,7 @@
           >
         </div>
         <div class="pt-5 text-center">
-          <v-btn block color="primary" elevation="0">{{ $t("sign_up") }}</v-btn>
+          <v-btn block color="primary" elevation="0" @click="$route.push('/verification')">{{ $t("sign_up") }}</v-btn>
           <div class="bottom-txt">{{ $t("already_have_account") }}</div>
           <nuxt-link class="sign-up-link" :to="'/login'">{{
             $t("login")
@@ -87,23 +87,6 @@ export default {
 };
 </script>
 <style>
-.login-card {
-  padding: 20px !important;
-  margin-top: 20%;
-}
-.login-card .title-card {
-  text-align: center;
-  color: #05042b;
-  font-size: 24px;
-  font-weight: 700;
-}
-.label-card {
-  margin-bottom: 4px !important;
-  margin-top: 16px;
-}
-a {
-  text-decoration: none !important;
-}
 .label-agree {
   font-size: 14px;
   margin-top: 12px;

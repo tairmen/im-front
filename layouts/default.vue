@@ -50,4 +50,30 @@ html {
   padding-left: 160px !important;
   padding-right: 160px !important;
 }
+
+
+.login-card {
+  padding: 20px !important;
+  margin-top: 20%;
+}
+.login-card .title-card {
+  text-align: center;
+  color: #05042b;
+  font-size: 24px;
+  font-weight: 700;
+}
+.login-card .subtitle-card {
+  font-family: "Assistant";
+  text-align: center;
+  color: #333333;
+  font-size: 14px;
+  font-weight: 300;
+}
+.label-card {
+  margin-bottom: 4px !important;
+  margin-top: 16px;
+}
+a {
+  text-decoration: none !important;
+}
 </style>
