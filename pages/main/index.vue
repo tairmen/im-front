@@ -57,7 +57,7 @@
       {{ $t("token_timeline") }}
     </div>
     <div class="mt-6">
-      <img src="/token_timeline.png" />
+      <img class="bottom-image" src="/token_timeline.png" />
     </div>
   </div>
 </template>
@@ -103,5 +103,46 @@ export default {
   font-size: 14px;
   color: #061042;
   margin-bottom: 6px !important;
+}
+.bottom-image {
+  max-width: 80vw;
+}
+@media (max-width: 960px) {
+  .balance-main {
+    padding: 20px 20px 20px 6px;
+  }
+  .balance-title {
+    font-size: 18px;
+  }
+  .balance-data {
+    font-size: 24px !important;
+  }
+  .buy-tokens-title {
+    font-size: 18px;
+    margin-top: 14px;
+  }
+  .buy-tokens {
+    padding: 20px 20px 20px 0px;
+  }
+  .label-main {
+    font-size: 12px;
+  }
+}
+@media (max-width: 1264px) {
+  .balance-main {
+    padding: 30px 60px 20px 6px;
+  }
+  .balance-title {
+    font-size: 22px;
+  }
+  .balance-data {
+    font-size: 32px !important;
+  }
+  .buy-tokens-title {
+    font-size: 22px;
+  }
+  .buy-tokens {
+    padding: 20px 40px 20px 0px;
+  }
 }
 </style>

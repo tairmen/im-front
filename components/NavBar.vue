@@ -1,13 +1,15 @@
 <template>
   <v-app-bar fixed app elevation="0">
-    <img src="/logo_full.svg" />
+    <img class="logo-img" src="/logo_full.svg" />
     <v-spacer></v-spacer>
     <div class="menu-item" v-for="(item, i) in items" :key="i">
       {{ $t(item.text) }}
     </div>
     <v-spacer></v-spacer>
     <LangSelect />
-    <v-btn class="white-paper-btn ml-4" color="primary" elevation="0">{{ $t("white_paper") }}</v-btn>
+    <v-btn class="white-paper-btn ml-4" color="primary" elevation="0">{{
+      $t("white_paper")
+    }}</v-btn>
   </v-app-bar>
 </template>
 <script>
@@ -48,5 +50,15 @@ export default {
   border-radius: 10px;
   color: #ffffff !important;
   text-transform: none;
+}
+@media (max-width: 960px) {
+  .v-app-bar {
+    padding: 0px 10px;
+  }
+}
+@media (max-width: 560px) {
+  .logo-img {
+    display: none;
+  }
 }
 </style>

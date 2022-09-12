@@ -51,7 +51,6 @@ html {
   padding-right: 160px !important;
 }
 
-
 .login-card {
   padding: 20px !important;
   margin-top: 20%;
@@ -75,5 +74,25 @@ html {
 }
 a {
   text-decoration: none !important;
+}
+
+@media (max-width: 960px) {
+  .login-background {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+  .main-background {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+  .login-card {
+    margin-top: 20px;
+  }
+  .login-card .title-card {
+    font-size: 20px;
+  }
+  .login-card .subtitle-card {
+    font-size: 12px;
+  }
 }
 </style>

@@ -1,13 +1,17 @@
 <template>
   <v-app-bar fixed app elevation="0">
-    <img src="/logo_full.svg" />
+    <img class="logo-img" src="/logo_full.svg" />
     <v-spacer></v-spacer>
     <LangSelect />
     <span class="welcome-nav">{{ $t("welcome") }} </span>
     <span class="primary--text px-1">{{ "John" }}</span>
-    <v-btn class="white-paper-btn ml-4" color="primary" elevation="0" @click="$router.push('/login')">{{
-      $t("log_out")
-    }}</v-btn>
+    <v-btn
+      class="white-paper-btn ml-4"
+      color="primary"
+      elevation="0"
+      @click="$router.push('/login')"
+      >{{ $t("log_out") }}</v-btn
+    >
   </v-app-bar>
 </template>
 <script>
@@ -37,5 +41,18 @@ export default {
 .welcome-nav {
   font-weight: 300;
   color: #8e8e8e;
+}
+@media (max-width: 960px) {
+  .v-app-bar {
+    padding: 0px 10px;
+  }
+}
+@media (max-width: 560px) {
+  .welcome-nav {
+    display: none;
+  }
+  .logo-img {
+    display: none;
+  }
 }
 </style>
