@@ -1,16 +1,20 @@
 <template>
   <v-footer class="main-footer" :absolute="!fixed" app>
-    <div class="logo-foo">
+    <div class="logo-foo d-none d-md-flex">
       <img src="/logo_full_white.svg" /><span class="terms-foo"
         ><span class="priv-sel">{{ $t("privacy_policy") }}</span> |
         <span class="priv-sel">{{ $t("terms_and_cond") }}</span></span
       >
     </div>
-    <v-spacer></v-spacer>
-    <div class="foo-menu-item" v-for="(item, i) in items" :key="i">
+    <v-spacer class="d-none d-md-block"></v-spacer>
+    <div
+      class="foo-menu-item d-none d-md-block"
+      v-for="(item, i) in items"
+      :key="i"
+    >
       {{ $t(item.text) }}
     </div>
-    <v-spacer></v-spacer>
+    <v-spacer class="d-none d-md-block"></v-spacer>
     <div class="reserved-foo">
       <span class="socials-foo"
         ><img v-for="(item, i) in socials" :key="i" :src="item"
@@ -53,7 +57,6 @@ export default {
   font-family: "Assistant";
 }
 .logo-foo {
-  display: flex;
   flex-direction: column;
 }
 .logo-foo img {
@@ -90,5 +93,16 @@ export default {
 }
 .priv-sel:hover {
   color: #c9c9c9;
+}
+@media (max-width: 960px) {
+  .socials-foo {
+    display: flex;
+  }
+  .main-footer {
+    height: 120px;
+    padding: 10px 10px;
+    justify-content: center;
+    align-items: center;
+  }
 }
 </style>

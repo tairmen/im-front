@@ -2,7 +2,7 @@
   <v-app-bar fixed app elevation="0">
     <img class="logo-img" src="/logo_full.svg" />
     <v-spacer></v-spacer>
-    <div class="menu-item" v-for="(item, i) in items" :key="i">
+    <div class="d-none d-md-block menu-item" v-for="(item, i) in items" :key="i">
       {{ $t(item.text) }}
     </div>
     <v-spacer></v-spacer>
@@ -10,11 +10,14 @@
     <v-btn class="white-paper-btn ml-4" color="primary" elevation="0">{{
       $t("white_paper")
     }}</v-btn>
+    <v-btn icon @click="setMobileMenu" class="d-block d-md-none">
+      <v-app-bar-nav-icon></v-app-bar-nav-icon>
+    </v-btn>
   </v-app-bar>
 </template>
 <script>
 import LangSelect from "~/components/settings/LangSelect";
-import { mapGetters } from "vuex";
+import { mapGetters, mapMutations } from "vuex";
 export default {
   name: "NavBar",
   components: {
@@ -28,6 +31,9 @@ export default {
       items: "getAllMenu",
     }),
   },
+  methods: {
+    ...mapMutations({ setMobileMenu: "menu/setMobileMenu" }),
+  }
 };
 </script>
 <style>

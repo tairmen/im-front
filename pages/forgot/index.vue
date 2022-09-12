@@ -1,6 +1,6 @@
 <template>
   <v-row>
-    <v-col lg="4" md="12" sm="12" xs="12">
+    <v-col lg="4" md="12">
       <v-card class="login-card">
         <p class="title-card mb-1">{{ $t("reset_password") }}</p>
         <p class="subtitle-card">{{ $t("enter_you_email_text") }}</p>
@@ -22,7 +22,7 @@
         </div>
       </v-card>
     </v-col>
-    <v-col></v-col>
+    <v-col class="d-none d-md-block"></v-col>
   </v-row>
 </template>
 

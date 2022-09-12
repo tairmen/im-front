@@ -1,7 +1,8 @@
 <template>
   <v-app dark>
     <MainNavBar v-if="main_bav_bar" />
-    <NavBar v-else />
+    <NavBar v-if="!main_bav_bar" />
+    <MenuMobile v-if="!main_bav_bar" />
     <v-main :class="!main_bav_bar ? 'login-background' : 'main-background'">
       <Nuxt />
     </v-main>
@@ -11,6 +12,7 @@
 
 <script>
 import NavBar from "~/components/NavBar";
+import MenuMobile from "~/components/MenuMobile";
 import MainNavBar from "~/components/MainNavBar";
 import Footer from "~/components/Footer";
 export default {
@@ -19,6 +21,7 @@ export default {
     NavBar,
     Footer,
     MainNavBar,
+    MenuMobile,
   },
   data() {
     return {};
@@ -54,6 +57,7 @@ html {
 .login-card {
   padding: 20px !important;
   margin-top: 20%;
+  margin-bottom: 20px;
 }
 .login-card .title-card {
   text-align: center;
