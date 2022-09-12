@@ -10,13 +10,13 @@
           outlined
           hide-details
         ></v-text-field>
-        <p class="label-card">{{ $t("phone") }}</p>
+        <!-- <p class="label-card">{{ $t("phone") }}</p>
         <v-text-field
           v-model="phone"
           dense
           outlined
           hide-details
-        ></v-text-field>
+        ></v-text-field> -->
         <p class="label-card">{{ $t("password") }}</p>
         <v-text-field
           v-model="password"
@@ -48,7 +48,8 @@
             block
             color="primary"
             elevation="0"
-            @click="$router.push('main')"
+            :loading="loading"
+            @click="run_login"
             >{{ $t("login") }}</v-btn
           >
           <div class="bottom-txt">{{ $t("dont_have_account") }}</div>
@@ -68,12 +69,33 @@ export default {
   data() {
     return {
       email: "",
-      phone: "",
       password: "",
       is_show_pass: false,
       remember_me: false,
+      loading: false
     };
   },
+  methods: {
+    async run_login() {
+      this.loading = true;
+      await this.$auth
+        .loginWith("local", {
+          data: {
+            email: this.email,
+            password: this.password,
+          },
+        })
+        .then((response) => {
+          this.$router.push("/main");
+          // console.log(response);
+        })
+        .catch((er) => {
+          console.log(er);
+          
+        });
+      this.loading = false;
+    }
+  }
 };
 </script>
 <style>

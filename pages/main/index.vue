@@ -65,11 +65,26 @@
 export default {
   data() {
     return {
-      coins: 160,
       price: 0.0013,
       amount_usd: null,
       amount: null,
     };
+  },
+  created() {
+    if (this.$auth && this.$auth.user){
+      console.log('this.$auth.user', this.$auth.user);
+    } else {
+      this.$router.push("/login");
+    }
+  },
+  computed: {
+    coins() {
+      if (this.$auth && this.$auth.user) {
+        return this.$auth.user.balance;
+      } else {
+        return 0;
+      }
+    }
   },
 };
 </script>

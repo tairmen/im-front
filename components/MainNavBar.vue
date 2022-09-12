@@ -4,12 +4,12 @@
     <v-spacer></v-spacer>
     <LangSelect />
     <span class="welcome-nav">{{ $t("welcome") }} </span>
-    <span class="primary--text px-1">{{ "John" }}</span>
+    <span class="primary--text px-1">{{ email }}</span>
     <v-btn
       class="white-paper-btn ml-4"
       color="primary"
       elevation="0"
-      @click="$router.push('/login')"
+      @click="$auth.logout()"
       >{{ $t("log_out") }}</v-btn
     >
   </v-app-bar>
@@ -25,7 +25,15 @@ export default {
   data() {
     return {};
   },
-  computed: {},
+  computed: {
+    email() {
+      if (this.$auth && this.$auth.user) {
+        return this.$auth.user.email;
+      } else {
+        return "";
+      }
+    },
+  },
 };
 </script>
 <style>

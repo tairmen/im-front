@@ -8,7 +8,11 @@
 export default {
   name: "IndexPage",
   created() {
-    this.$router.push("/login");
+    if (this.$auth && this.$auth.user) {
+      this.$router.push("/main");
+    } else {
+      this.$router.push("/login");
+    }
   },
 };
 </script>

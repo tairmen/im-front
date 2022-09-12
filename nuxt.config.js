@@ -50,21 +50,60 @@ export default {
     ]
   },
 
+  auth: {
+    strategies: {
+      local: {
+        endpoints: {
+          login: {
+            url: "/login",
+            method: "post",
+            propertyName: "token",
+          },
+          user: {
+            url: "/current",
+            method: "get",
+            propertyName: "data",
+          },
+        },
+        tokenRequired: true,
+        tokenType: "Bearer",
+      },
+    },
+
+    redirect: {
+      login: false,
+      callback: "/login",
+      logout: "/login",
+      home: false,
+    },
+  },
+
   css: [
   ],
 
   plugins: [
+    "~/plugins/envstore",
+    "~/plugins/axios",
   ],
 
   components: true,
 
   buildModules: [
     '@nuxtjs/vuetify',
+    [
+      "@nuxtjs/dotenv",
+      {
+      },
+    ],
   ],
 
   modules: [
-    "@nuxtjs/i18n"
+    "@nuxtjs/axios", "@nuxtjs/i18n", "@nuxtjs/auth"
   ],
+
+  router: {
+    middleware: ["auth"],
+  },
 
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
