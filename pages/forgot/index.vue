@@ -57,7 +57,7 @@ export default {
           password: this.password,
         });
         if (res.data && res.data.success) {
-          this.router.push('/reset');
+          this.$router.push('/reset');
         }
       }
       this.loading = false;

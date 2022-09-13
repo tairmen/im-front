@@ -49,6 +49,8 @@
           class="white-paper-btn mt-6"
           color="primary"
           elevation="0"
+          :loading="loading"
+          @click="buy"
           >{{ $t("buy") }}</v-btn
         ></v-col
       >
@@ -70,6 +72,7 @@ export default {
       amount: null,
       am_ch: false,
       am_usd_ch: false,
+      loading: false,
     };
   },
   created() {
@@ -102,10 +105,22 @@ export default {
   computed: {
     coins() {
       if (this.$auth && this.$auth.user) {
-        return this.$auth.user.balance;
+        return this.$auth.user.balance ? this.$auth.user.balance : 0;
       } else {
         return 0;
       }
+    },
+  },
+  methods: {
+    async buy() {
+      this.loading = true;
+      let res = await this.$axios.post("/payment", {
+        amount: parseFloat(this.amount_usd),
+      });
+      if (res.data && res.data.success) {
+        window.open(res.data.data.payment_url);
+      }
+      this.loading = false;
     },
   },
 };

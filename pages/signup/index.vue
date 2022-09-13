@@ -142,7 +142,7 @@ export default {
           password: this.password,
         });
         if (res.data && res.data.success) {
-          this.router.push('/verification');
+          this.$router.push('/verification');
         }
       }
       this.loading = false;
