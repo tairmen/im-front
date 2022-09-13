@@ -9,14 +9,15 @@
           v-model="email"
           dense
           outlined
-          hide-details
+          :rules="validation.email"
         ></v-text-field>
         <div class="pt-5 text-center">
           <v-btn
             block
             color="primary"
             elevation="0"
-            @click="$router.push('/reset')"
+            :loading="loading"
+            @click="send"
             >{{ $t("send") }}</v-btn
           >
         </div>
@@ -32,8 +33,36 @@ export default {
   data() {
     return {
       email: "",
+      loading: false
     };
   },
+  computed: {
+    validation() {
+      return {
+        email: [
+          (v) => !!v || this.$t("enter_verification_email"),
+          (v) => /.+@.+\..+/.test(v) || this.$t("enter_verification_email"),
+        ],
+      };
+    },
+  },
+  methods: {
+    async send() {
+      this.loading = true;
+      let check = /.+@.+\..+/.test(this.email);
+      if (check) {
+        let res = await this.$axios.post("/email_send", {
+          phone: this.phone,
+          email: this.email,
+          password: this.password,
+        });
+        if (res.data && res.data.success) {
+          this.router.push('/reset');
+        }
+      }
+      this.loading = false;
+    }
+  }
 };
 </script>
 <style>

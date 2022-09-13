@@ -38,7 +38,7 @@ export default {
 </script>
 <style>
 html {
-  overflow-y: hidden;
+  overflow-y: auto;
   font-family: Ubuntu;
 }
 .login-background {
@@ -56,7 +56,7 @@ html {
 
 .login-card {
   padding: 20px !important;
-  margin-top: 20%;
+  margin-top: 12%;
   margin-bottom: 20px;
 }
 .login-card .title-card {

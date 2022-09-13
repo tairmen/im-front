@@ -36,5 +36,10 @@ export default {
     "enter_you_password_text": "Будь ласка, введіть свій новий пароль нижче",
     "email_verification": "Веріфікація email",
     "email_verification_text": "Будь ласка, введіть 6-символьний веріфікаційний код. Код валідний 30 хвилин.",
-    "verification_code": "Веріфікаційний код"
+    "verification_code": "Веріфікаційний код",
+    "password_required": "Пароль необхідний!",
+    "password_create_description": "Ваш пароль повинен включати велику букву і хоча б одну цифру",
+    "invalid_phone_number": "Невірний номер телефона",
+    "enter_verification_email": "Будб ласка, введіть дійсний адрес електроної пошти",
+    "password_match": "Паролі повинні співпадати",
 }

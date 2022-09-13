@@ -36,5 +36,10 @@ export default {
     "enter_you_password_text": "Please put your new password here",
     "email_verification": "Email verification",
     "email_verification_text": "Please enter the 6-digit verification code. The code is valid for 30 minutes.",
-    "verification_code": "Verification code"
+    "verification_code": "Verification code",
+    "password_required": "Password is required!",
+    "password_create_description": "Your password has to have a capital letter and at least one number",
+    "invalid_phone_number": "Invalid phone number",
+    "enter_verification_email": "Please enter a valid email",
+    "password_match": "Passwords must match",
 }

@@ -11,7 +11,8 @@
             block
             color="primary"
             elevation="0"
-            @click="$router.push('/main')"
+            :loading="loading"
+            @click="verify"
             >{{ $t("send") }}</v-btn
           >
         </div>
@@ -27,7 +28,27 @@ export default {
   data() {
     return {
       code: "",
+      loading: false,
     };
+  },
+  methods: {
+    async verify() {
+      this.loading = true;
+      await this.$auth
+        .loginWith("local", {
+          data: {
+            code: this.code,
+          },
+        })
+        .then((response) => {
+          this.$router.push("/main");
+          // console.log(response);
+        })
+        .catch((er) => {
+          console.log(er);
+        });
+      this.loading = false;
+    },
   },
 };
 </script>

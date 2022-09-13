@@ -72,7 +72,7 @@ export default {
       password: "",
       is_show_pass: false,
       remember_me: false,
-      loading: false
+      loading: false,
     };
   },
   methods: {
@@ -91,11 +91,10 @@ export default {
         })
         .catch((er) => {
           console.log(er);
-          
         });
       this.loading = false;
-    }
-  }
+    },
+  },
 };
 </script>
 <style>

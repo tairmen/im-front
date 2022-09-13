@@ -68,14 +68,36 @@ export default {
       price: 0.0013,
       amount_usd: null,
       amount: null,
+      am_ch: false,
+      am_usd_ch: false,
     };
   },
   created() {
-    if (this.$auth && this.$auth.user){
-      console.log('this.$auth.user', this.$auth.user);
+    if (this.$auth && this.$auth.user) {
+      console.log("this.$auth.user", this.$auth.user);
     } else {
       this.$router.push("/login");
     }
+  },
+  watch: {
+    amount() {
+      if (!this.am_usd_ch) {
+        let amount_usd = this.amount * this.price;
+        this.am_ch = true;
+        this.amount_usd = Math.round(amount_usd * 10000) / 10000;
+      } else {
+        this.am_usd_ch = false;
+      }
+    },
+    amount_usd() {
+      if (!this.am_ch) {
+        let amount = this.amount_usd / this.price;
+        this.am_usd_ch = true;
+        this.amount = Math.round(amount * 100) / 100;
+      } else {
+        this.am_ch = false;
+      }
+    },
   },
   computed: {
     coins() {
@@ -84,7 +106,7 @@ export default {
       } else {
         return 0;
       }
-    }
+    },
   },
 };
 </script>

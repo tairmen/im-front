@@ -36,5 +36,10 @@ export default {
     "enter_you_password_text": "Пожалуйста, введите свой новый пароль ниже",
     "email_verification": "Верификация email",
     "email_verification_text": "Пожалуйста, введите 6-символьный верификационный код. Код валидный 30 минут.",
-    "verification_code": "Верификационный код"
+    "verification_code": "Верификационный код",
+    "password_required": "Необходим пароль!",
+    "password_create_description": "Ваш пароль должен состоять из заглавной буквы и хотя бы одной цифры",
+    "invalid_phone_number": "Неправильный номер телефона",
+    "enter_verification_email": "Пожалуйста, введите действительный адрес электронной почты",
+    "password_match": "Пароли должны совпадать",
 }
