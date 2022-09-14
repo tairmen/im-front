@@ -15,6 +15,7 @@
             @click="verify"
             >{{ $t("send") }}</v-btn
           >
+          <div class="error-mess" v-if="error_mess">{{ error_mess }}</div>
         </div>
       </v-card>
     </v-col>
@@ -29,6 +30,7 @@ export default {
     return {
       code: "",
       loading: false,
+      error_mess: ""
     };
   },
   methods: {
@@ -46,6 +48,7 @@ export default {
         })
         .catch((er) => {
           console.log(er);
+          this.error_mess = 'Invalid code';
         });
       this.loading = false;
     },

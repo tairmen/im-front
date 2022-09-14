@@ -66,6 +66,7 @@
             @click="register"
             >{{ $t("sign_up") }}</v-btn
           >
+          <div class="error-mess" v-if="error_mess">{{ error_mess }}</div>
           <div class="bottom-txt">{{ $t("already_have_account") }}</div>
           <nuxt-link class="sign-up-link" :to="'/login'">{{
             $t("login")
@@ -91,6 +92,7 @@ export default {
       aggree: false,
       conf_data: [],
       loading: false,
+      error_mess: ""
     };
   },
   watch: {
@@ -143,6 +145,8 @@ export default {
         });
         if (res.data && res.data.success) {
           this.$router.push('/verification');
+        } else {
+          this.error_mess = res.data.message;
         }
       }
       this.loading = false;

@@ -52,6 +52,7 @@
             @click="run_login"
             >{{ $t("login") }}</v-btn
           >
+          <div class="error-mess" v-if="error_mess">{{ error_mess }}</div>
           <div class="bottom-txt">{{ $t("dont_have_account") }}</div>
           <nuxt-link class="sign-up-link" :to="'/signup'">{{
             $t("sign_up")
@@ -73,6 +74,7 @@ export default {
       is_show_pass: false,
       remember_me: false,
       loading: false,
+      error_mess: "",
     };
   },
   methods: {
@@ -91,6 +93,7 @@ export default {
         })
         .catch((er) => {
           console.log(er);
+          this.error_mess = 'Wrong password or email';
         });
       this.loading = false;
     },

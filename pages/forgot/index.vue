@@ -20,6 +20,7 @@
             @click="send"
             >{{ $t("send") }}</v-btn
           >
+          <div class="error-mess" v-if="error_mess">{{ error_mess }}</div>
         </div>
       </v-card>
     </v-col>
@@ -33,7 +34,8 @@ export default {
   data() {
     return {
       email: "",
-      loading: false
+      loading: false,
+      error_mess: ""
     };
   },
   computed: {
@@ -58,6 +60,8 @@ export default {
         });
         if (res.data && res.data.success) {
           this.$router.push('/reset');
+        } else {
+          this.error_mess = res.data.message;
         }
       }
       this.loading = false;

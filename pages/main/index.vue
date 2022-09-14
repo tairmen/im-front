@@ -30,7 +30,7 @@
           dense
           outlined
           :suffix="'USD'"
-          hide-details
+          :error-messages="amount_errors"
         ></v-text-field>
       </v-col>
       <v-col
@@ -49,6 +49,7 @@
           class="white-paper-btn mt-6"
           color="primary"
           elevation="0"
+          :disabled="!amount_usd"
           :loading="loading"
           @click="buy"
           >{{ $t("buy") }}</v-btn
@@ -73,6 +74,7 @@ export default {
       am_ch: false,
       am_usd_ch: false,
       loading: false,
+      amount_errors: [],
     };
   },
   created() {
@@ -105,7 +107,12 @@ export default {
   computed: {
     coins() {
       if (this.$auth && this.$auth.user) {
-        return this.$auth.user.balance ? this.$auth.user.balance : 0;
+        if (this.$auth.user.balance) {
+          let res = this.$auth.user.balance / this.price;
+          return Math.round(res * 100) / 100;
+        } else {
+          return 0;
+        }
       } else {
         return 0;
       }
@@ -118,7 +125,10 @@ export default {
         amount: parseFloat(this.amount_usd),
       });
       if (res.data && res.data.success) {
+        this.amount_errors = [];
         window.open(res.data.data.payment_url);
+      } else if (res.data.message) {
+        this.amount_errors = [res.data.message];
       }
       this.loading = false;
     },
@@ -148,7 +158,7 @@ export default {
   margin-top: 30px;
 }
 .buy-tokens {
-  padding: 20px 20% 20px 0px;
+  padding: 20px 20% 10px 0px;
 }
 .label-main {
   font-weight: 300;

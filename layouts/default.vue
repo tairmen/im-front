@@ -76,6 +76,10 @@ html {
   margin-bottom: 4px !important;
   margin-top: 16px;
 }
+.error-mess {
+  color: red;
+  font-size: 14px;
+}
 a {
   text-decoration: none !important;
 }
